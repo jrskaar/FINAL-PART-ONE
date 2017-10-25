@@ -9,7 +9,7 @@ public class part1c <T> implements StackInterface <T> {
     
     public T pop() {
         // pop: return entry on top, remove it
-        //@SuppressWarnings("unchecked")
+        // @SuppressWarnings("unchecked")
         Node temp = topItem;
         topItem = temp.getLink();
         return (T)temp.getData();
@@ -17,7 +17,7 @@ public class part1c <T> implements StackInterface <T> {
     
     public T peek() {
         // peek: return entry on top
-        //@SuppressWarnings("unchecked")
+        // @SuppressWarnings("unchecked")
         return (T)topItem.getData();
     }
     
