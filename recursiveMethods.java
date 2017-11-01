@@ -8,8 +8,12 @@ public class recursiveMethods<T> {
         SELECTIVE SORT
     */
     
-    public static int[] selectiveSort(int[] a, int[] tempArray, int first, int last) {
+    public static int[] selectiveSort(int[] a, int first, int last) {
         // selectiveSort
+        if (first < last) {
+            indexOfNextSmallest = //the index of the smallest value in a
+            a[first] = a[indexOfNextSmallest];
+            selectiveSort(a, first+1, last);
     }
     
     /**
@@ -18,14 +22,36 @@ public class recursiveMethods<T> {
     
     public static int[] insertionSort(int[] a, int[] tempArray, int first, int last) {
         // insertionSort
+        
     }
     
     /**
         SHELL SORT
     */
     
-    public static int[] shellSort(int[] a, int[] tempArray, int first, int last) {
+    public int[] incrementalInsertionSort (int[] a, int first, int last, int space) {
+        // sorts equally spaced entries of an array into ascending order
+        for (unsorted = first + space through last at increments of space) {
+            nextToInsert = a[unsorted];
+            index = unsorted - s[ace;
+            while ( (index >= first) && (nextToInsert.compareTo(a[index]) < 0) ) {
+                a[index + space] = a[index];
+                index = index - space;
+            }
+            a[inex + space] = nextToInsert;
+        }
+    }
+    
+    public static int[] shellSort(int[] a, int first, int last) {
         // shellSort
+        int n = number of array entries;
+        int space = n/2;
+        while (space > 0) {
+            for (begin = frist through first+space-1) {
+                incrementalInsertionSort(a, begin, last, space);
+            }
+            space = space/2;
+        }
     }
     
     /**
@@ -119,3 +145,4 @@ public class recursiveMethods<T> {
     public static int[] radixSort(int[] a, int[] tempArray, int first, int last) {
         // radixSort
     }
+}

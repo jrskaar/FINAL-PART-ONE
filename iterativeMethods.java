@@ -6,8 +6,12 @@ public class iterativeMethods<T> {
         SELECTIVE SORT
     */
     
-    public static int[] selectiveSort(int[] a, int[] tempArray, int first, int last) {
+    public static int[] selectiveSort(int[] a, int n) {
         // selectiveSort
+        for (int i = 0; i < n-1; i++) {
+            int indexOfNextSmallest = //index of smallest value among array
+            a[i] = a[indexOfNextSmallest];
+        }
     }
     
     /**
@@ -61,3 +65,4 @@ public class iterativeMethods<T> {
     public static int[] radixSort(int[] a, int[] tempArray, int first, int last) {
         // radixSort
     }
+}
