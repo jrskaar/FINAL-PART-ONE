@@ -30,4 +30,4 @@ public interface PriorityQueueInterface<T extends Comparable<? super T>>
 
    /** Removes all entries from this priority queue. */
    public void clear();
-}
+} // end PriorityQueueInterface
