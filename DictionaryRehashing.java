@@ -2,13 +2,35 @@ import java.util.Iterator;
 
 public class DictionaryRehashing<K,V> implements DictionaryInterface<K, V> {
     private int numEntries;
+    private static final int DEFAULT_CAPACITY = 5;  // Must be prime
+    private static final int MAX_CAPACITY = 10000;
+    // Hash table:
+    private TableEntry<K,V>[] hashTable;
+    private int tableSize;      // Must be prime
+    private static final int MAX_SIZE = 2 * MAX_CAPACITY;
+    private boolean initialized = false;
+    private static final double MAX_LOAD_FACTOR = 0.5;  // Fraction of hash table that can be filled
     
     // default consructor
     public DictionaryRehashing() {
-        // default constructor
+        this(DEFAULT_CAPACITY);
     }
     
-        /** Adds a new entry to this dictionary. If the given search key already
+    // overloaded constructor
+    public DictionaryRehashing(int initialCapacity) {
+        checkCapacity(initialCapacity);
+        numEntries = 0;         // Dictionary is empty so far
+        // Set up hash table:
+        // Initial size of hash table is same as initialCapacity if it is prime
+        int tableSize = getNextPrime(initialCapacity);      // gets next prime number
+        checkSize(tableSize);   // Check for max array size
+        @SuppressedWarnings("unchecked")
+        TableEntry<K,V>[] temp = (TableEntry<K,V>[])new TableEntry[tableSize];
+        hashTable = temp;
+        initialized = true;
+    }
+    
+    /** Adds a new entry to this dictionary. If the given search key already
         exists in the dictionary, replaces the corresponding value.
         @param key    An object search key of the new entry.
         @param value  An object associated with the search key.
