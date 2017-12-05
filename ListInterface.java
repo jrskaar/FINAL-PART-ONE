@@ -41,7 +41,7 @@ public interface ListInterface<T> {
         @param position. The position for the item to be viewed
         @return item that was viewed
     */
-    public T view(int position);
+    public T getEntry(int position);
     
     /**
         Removes every item in the list
@@ -64,9 +64,9 @@ public interface ListInterface<T> {
         List size does not change
         Item positions do not change
         @param item. The item to be checked for in the list
-        @return item that was checked for in the list
+        @return whether or not item that was checked for is in the list
     */
-    public T contains(T item);
+    public boolean contains(T item);
     
     /**
         See how long the list is
@@ -83,3 +83,4 @@ public interface ListInterface<T> {
         @return whether list is empty or not
     */
     public boolean isEmpty();
+}

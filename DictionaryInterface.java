@@ -5,7 +5,7 @@ import java.util.Iterator;
    @author Timothy M. Henry
    @version 4.0
 */
-public interface DictionaryInterface<K, V>
+public interface DictionaryInterface<K,V>
 {
    /** Adds a new entry to this dictionary. If the given search key already
        exists in the dictionary, replaces the corresponding value.
@@ -55,4 +55,4 @@ public interface DictionaryInterface<K, V>
    
    /** Removes all entries from this dictionary. */
    public void clear();
-} // end DictionaryInterface
+}

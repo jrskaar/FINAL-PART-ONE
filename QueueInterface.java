@@ -13,17 +13,18 @@ public interface QueueInterface<T>
   /** Removes and returns the entry at the front of this queue.
       @return  The object at the front of the queue. 
       @throws  EmptyQueueException if the queue is empty before the operation. */
-  public T dequeue();
+  public T dequeue() throws EmptyQueueException;
   
   /**  Retrieves the entry at the front of this queue.
       @return  The object at the front of the queue.
       @throws  EmptyQueueException if the queue is empty. */
-  public T getFront();
+  public T getFront() throws EmptyQueueException;
   
   /** Detects whether this queue is empty.
       @return  True if the queue is empty, or false otherwise. */
   public boolean isEmpty();
   
-  /** Removes all entries from this queue. */
-  public void clear();
-} // end QueueInterface
+  /** Removes all entries from this queue.
+      @throws  EmptyQueueException if the queue is empty. */
+  public void clear() throws EmptyQueueException;
+}
